@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.samplemvvm2.R
-import com.example.samplemvvm2.model.County
+import com.example.samplemvvm2.model.Country
 import kotlinx.android.synthetic.main.item_country.view.*
 
-class CountryListAdapter(var countries: ArrayList<County>) : RecyclerView.Adapter<CountryListAdapter.CountryViewHolder>() {
+class CountryListAdapter(var countries: ArrayList<Country>) : RecyclerView.Adapter<CountryListAdapter.CountryViewHolder>() {
 
-    fun updateCountries(newCountries: List<County>) {
+    fun updateCountries(newCountries: List<Country>) {
         countries.clear()
         countries.addAll(newCountries)
         notifyDataSetChanged()
@@ -29,8 +29,8 @@ class CountryListAdapter(var countries: ArrayList<County>) : RecyclerView.Adapte
     class CountryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val countryName = view.txt_name
 
-        fun bind(county: County) {
-            countryName.text = county.countyName
+        fun bind(country: Country) {
+            countryName.text = country.countyName
         }
     }
 
